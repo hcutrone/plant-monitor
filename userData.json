@@ -1,0 +1,67 @@
+[
+  {
+    "id": 1,
+    "plants": [
+      {
+        "plantName": "Monstera Deliciosa",
+        "imageName": "MD",
+        "sunlightData": {
+          "label": "Sunlight",
+          "goal": "6 hrs/day",
+          "percentage": "60"
+        },
+        "temperatureData": {
+          "label": "Temperature",
+          "goal": "72 degrees F",
+          "percentage": "80"
+        },
+        "moistureData": {
+          "label": "Soil Moisture",
+          "goal": "80",
+          "percentage": "20"
+        },
+        "pHData": {
+          "label": "pH",
+          "goal": "7",
+          "percentage": "50"
+        },
+        "notifications": {
+            "sunlight": true,
+            "moisture": true,
+            "temperature": true,
+            "pH": true
+        }
+      },
+      {
+        "plantName": "String of Pearls",
+        "imageName": "MD",
+        "sunlightData": {
+          "label": "Sunlight",
+          "goal": "6 hrs/day",
+          "percentage": "10"
+        },
+        "temperatureData": {
+          "label": "Temperature",
+          "goal": "72 degrees F",
+          "percentage": "20"
+        },
+        "moistureData": {
+          "label": "Soil Moisture",
+          "goal": "80",
+          "percentage": "80"
+        },
+        "pHData": {
+          "label": "pH",
+          "goal": "7",
+          "percentage": "90"
+        },
+        "notifications": {
+            "sunlight": true,
+            "moisture": true,
+            "temperature": true,
+            "pH": false
+        }
+      }
+    ]
+  }
+]

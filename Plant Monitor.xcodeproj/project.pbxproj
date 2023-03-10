@@ -7,18 +7,38 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B7F3D5629B40003008A0B48 /* NewPlantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7F3D5529B40003008A0B48 /* NewPlantView.swift */; };
+		3B7F3D5C29B51D41008A0B48 /* Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B7F3D5B29B51D41008A0B48 /* Test.m */; };
 		3B8CC2B229B1702D0035FE07 /* Plant_MonitorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8CC2B129B1702D0035FE07 /* Plant_MonitorApp.swift */; };
-		3B8CC2B429B1702D0035FE07 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8CC2B329B1702D0035FE07 /* ContentView.swift */; };
 		3B8CC2B629B1702F0035FE07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B8CC2B529B1702F0035FE07 /* Assets.xcassets */; };
 		3B8CC2B929B1702F0035FE07 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B8CC2B829B1702F0035FE07 /* Preview Assets.xcassets */; };
+		3B8CC2C029B174F50035FE07 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8CC2BF29B174F50035FE07 /* HomeView.swift */; };
+		3B8CC2C429B177C10035FE07 /* MD.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3B8CC2C329B177C10035FE07 /* MD.jpg */; };
+		3B8CC2C629B178380035FE07 /* PlantImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8CC2C529B178380035FE07 /* PlantImage.swift */; };
+		3B8CC2C829B184190035FE07 /* Attribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8CC2C729B184190035FE07 /* Attribute.swift */; };
+		3B8CC2CC29B1D2960035FE07 /* MyPlantsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8CC2CB29B1D2960035FE07 /* MyPlantsView.swift */; };
+		3B8CC2CE29B275BD0035FE07 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8CC2CD29B275BD0035FE07 /* Notifications.swift */; };
+		3B8CC2D029B285EF0035FE07 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8CC2CF29B285EE0035FE07 /* User.swift */; };
+		3B8CC2D229B28A140035FE07 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8CC2D129B28A140035FE07 /* ModelData.swift */; };
+		3B8CC2D429B28B790035FE07 /* userData.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B8CC2D329B28B790035FE07 /* userData.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3B7F3D5529B40003008A0B48 /* NewPlantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPlantView.swift; sourceTree = "<group>"; };
+		3B7F3D5B29B51D41008A0B48 /* Test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Test.m; sourceTree = "<group>"; };
 		3B8CC2AE29B1702D0035FE07 /* Plant Monitor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Plant Monitor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B8CC2B129B1702D0035FE07 /* Plant_MonitorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plant_MonitorApp.swift; sourceTree = "<group>"; };
-		3B8CC2B329B1702D0035FE07 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3B8CC2B529B1702F0035FE07 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3B8CC2B829B1702F0035FE07 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3B8CC2BF29B174F50035FE07 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		3B8CC2C329B177C10035FE07 /* MD.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MD.jpg; sourceTree = "<group>"; };
+		3B8CC2C529B178380035FE07 /* PlantImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantImage.swift; sourceTree = "<group>"; };
+		3B8CC2C729B184190035FE07 /* Attribute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attribute.swift; sourceTree = "<group>"; };
+		3B8CC2CB29B1D2960035FE07 /* MyPlantsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPlantsView.swift; sourceTree = "<group>"; };
+		3B8CC2CD29B275BD0035FE07 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
+		3B8CC2CF29B285EE0035FE07 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		3B8CC2D129B28A140035FE07 /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
+		3B8CC2D329B28B790035FE07 /* userData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = userData.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +55,13 @@
 		3B8CC2A529B1702D0035FE07 = {
 			isa = PBXGroup;
 			children = (
+				3B7F3D5B29B51D41008A0B48 /* Test.m */,
+				3B8CC2D129B28A140035FE07 /* ModelData.swift */,
+				3B8CC2CF29B285EE0035FE07 /* User.swift */,
+				3B8CC2D329B28B790035FE07 /* userData.json */,
+				3B8CC2C729B184190035FE07 /* Attribute.swift */,
+				3B8CC2C529B178380035FE07 /* PlantImage.swift */,
+				3B8CC2C329B177C10035FE07 /* MD.jpg */,
 				3B8CC2B029B1702D0035FE07 /* Plant Monitor */,
 				3B8CC2AF29B1702D0035FE07 /* Products */,
 			);
@@ -51,8 +78,11 @@
 		3B8CC2B029B1702D0035FE07 /* Plant Monitor */ = {
 			isa = PBXGroup;
 			children = (
+				3B7F3D5529B40003008A0B48 /* NewPlantView.swift */,
+				3B8CC2CD29B275BD0035FE07 /* Notifications.swift */,
+				3B8CC2CB29B1D2960035FE07 /* MyPlantsView.swift */,
 				3B8CC2B129B1702D0035FE07 /* Plant_MonitorApp.swift */,
-				3B8CC2B329B1702D0035FE07 /* ContentView.swift */,
+				3B8CC2BF29B174F50035FE07 /* HomeView.swift */,
 				3B8CC2B529B1702F0035FE07 /* Assets.xcassets */,
 				3B8CC2B729B1702F0035FE07 /* Preview Content */,
 			);
@@ -99,6 +129,7 @@
 				TargetAttributes = {
 					3B8CC2AD29B1702D0035FE07 = {
 						CreatedOnToolsVersion = 14.2;
+						LastSwiftMigration = 1420;
 					};
 				};
 			};
@@ -125,7 +156,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B8CC2C429B177C10035FE07 /* MD.jpg in Resources */,
 				3B8CC2B929B1702F0035FE07 /* Preview Assets.xcassets in Resources */,
+				3B8CC2D429B28B790035FE07 /* userData.json in Resources */,
 				3B8CC2B629B1702F0035FE07 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,8 +170,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3B8CC2B429B1702D0035FE07 /* ContentView.swift in Sources */,
+				3B8CC2CE29B275BD0035FE07 /* Notifications.swift in Sources */,
+				3B8CC2C629B178380035FE07 /* PlantImage.swift in Sources */,
+				3B8CC2D029B285EF0035FE07 /* User.swift in Sources */,
+				3B8CC2C029B174F50035FE07 /* HomeView.swift in Sources */,
+				3B8CC2C829B184190035FE07 /* Attribute.swift in Sources */,
+				3B7F3D5C29B51D41008A0B48 /* Test.m in Sources */,
+				3B8CC2D229B28A140035FE07 /* ModelData.swift in Sources */,
+				3B7F3D5629B40003008A0B48 /* NewPlantView.swift in Sources */,
 				3B8CC2B229B1702D0035FE07 /* Plant_MonitorApp.swift in Sources */,
+				3B8CC2CC29B1D2960035FE07 /* MyPlantsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,6 +305,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Plant Monitor/Preview Content\"";
@@ -282,6 +324,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "hcutrone.Plant-Monitor";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -292,6 +335,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Plant Monitor/Preview Content\"";

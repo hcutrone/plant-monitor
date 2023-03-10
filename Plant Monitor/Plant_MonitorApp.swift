@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct Plant_MonitorApp: App {
+    @StateObject private var modelData = ModelData()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MyPlantsView()
+                .environmentObject(modelData)
         }
     }
 }
