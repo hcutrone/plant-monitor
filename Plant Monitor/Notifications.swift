@@ -17,18 +17,20 @@ struct Notifications: View {
     }
 
     func disableAllNotifications() {
-        modelData.users[0].plants[plantIndex].notifications.moisture = false
-        modelData.users[0].plants[plantIndex].notifications.temperature = false
-        modelData.users[0].plants[plantIndex].notifications.sunlight = false
-        modelData.users[0].plants[plantIndex].notifications.pH = false
+        for index in modelData.users[0].plants[plantIndex].notifications.indices {
+            modelData.users[0].plants[plantIndex].notifications[index].value = false
+        }
         all = false
     }
-    
+
     func updateAll() {
-        all = modelData.users[0].plants[plantIndex].notifications.moisture &&
-                modelData.users[0].plants[plantIndex].notifications.temperature &&
-                modelData.users[0].plants[plantIndex].notifications.sunlight &&
-                modelData.users[0].plants[plantIndex].notifications.pH
+        for index in modelData.users[0].plants[plantIndex].notifications.indices {
+            if (!modelData.users[0].plants[plantIndex].notifications[index].value) {
+                all = false
+                return
+            }
+        }
+        all = true
     }
     
     var body: some View {
@@ -37,29 +39,21 @@ struct Notifications: View {
                 .font(.largeTitle)
                 .multilineTextAlignment(.center)
             VStack {
-                NotifToggle(label: "Soil Moisture", isOn: $modelData.users[0].plants[plantIndex].notifications.moisture)
-                    .onChange(of: modelData.users[0].plants[plantIndex].notifications.moisture) { value in
-                        updateAll()
-                    }
-                NotifToggle(label: "Temperature", isOn: $modelData.users[0].plants[plantIndex].notifications.temperature)
-                    .onChange(of: modelData.users[0].plants[plantIndex].notifications.temperature) { value in
-                        updateAll()
-                    }
-                NotifToggle(label: "Sunlight", isOn: $modelData.users[0].plants[plantIndex].notifications.sunlight)
-                    .onChange(of: modelData.users[0].plants[plantIndex].notifications.sunlight) { value in
-                        updateAll()
-                    }
-                NotifToggle(label: "pH", isOn: $modelData.users[0].plants[plantIndex].notifications.pH)
-                    .onChange(of: modelData.users[0].plants[plantIndex].notifications.pH) { value in
-                        updateAll()
-                    }
+                ForEach(modelData.users[0].plants[plantIndex].notifications.indices, id: \.self) { index in
+                    var valueBinding: Binding<Bool> = Binding(get: {
+                        modelData.users[0].plants[plantIndex].notifications[index].value
+                    }, set: { newValue in
+                        modelData.users[0].plants[plantIndex].notifications[index].value = newValue
+                    })
+                    NotifToggle(label: modelData.users[0].plants[plantIndex].notifications[index].label, isOn: valueBinding)
+                }
+
                 NotifToggle(label: "All", isOn: $all)
                     .onChange(of: all) { value in
                         if (value) {
-                            modelData.users[0].plants[plantIndex].notifications.moisture = true
-                            modelData.users[0].plants[plantIndex].notifications.temperature = true
-                            modelData.users[0].plants[plantIndex].notifications.sunlight = true
-                            modelData.users[0].plants[plantIndex].notifications.pH = true
+                            for index in modelData.users[0].plants[plantIndex].notifications.indices {
+                                modelData.users[0].plants[plantIndex].notifications[index].value = true
+                            }
                         }
                     }
             }
