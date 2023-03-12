@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct MyPlantsView: View {
-    @EnvironmentObject var modelData: ModelData
+    @EnvironmentObject var user: UserData
     @State private var plantQuery: String = ""
-    
+
     func foo() {}
 
     var body: some View {
@@ -25,7 +25,7 @@ struct MyPlantsView: View {
                 .padding()
                 .overlay(RoundedRectangle(cornerRadius: 10, style: .continuous).stroke(.black, lineWidth: 1))
                 ScrollView(){
-                    ForEach(modelData.users[0].plants) { plant in
+                    ForEach(user.plants) { plant in
                         NavigationLink {
                             HomeView(plant: plant).navigationBarBackButtonHidden(/*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
                         } label: {
@@ -48,7 +48,7 @@ struct MyPlantsView: View {
 struct Plant: View {
     var plantName: String
     var plantImage: Image
-    
+
     var body: some View {
         HStack {
             PlantImage(plantImage: plantImage).padding()
@@ -61,6 +61,6 @@ struct Plant: View {
 
 struct MyPlantsView_Previews: PreviewProvider {
     static var previews: some View {
-        MyPlantsView().environmentObject(ModelData())
+        MyPlantsView().environmentObject(UserData(user: load("userData.json")))
     }
 }

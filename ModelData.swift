@@ -8,8 +8,13 @@
 import Foundation
 import Combine
 
-final class ModelData: ObservableObject {
-    @Published var users: [User] = load("userData.json")
+final class UserData: ObservableObject {
+    var id: Int
+    @Published var plants: [PlantObject]
+    init(user : User) {
+        self.id = user.id
+        self.plants = user.plants
+    }
 }
 
 func load<T: Decodable>(_ filename: String) -> T {

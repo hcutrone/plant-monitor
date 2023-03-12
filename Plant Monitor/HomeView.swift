@@ -9,9 +9,9 @@ import SwiftUI
 
 struct HomeView: View {
     var plant: PlantObject
-    
+
     func foo() {}
-    
+
     var body: some View {
         GeometryReader { geo in
             VStack{
@@ -37,7 +37,7 @@ struct HomeView: View {
 
                 Text(plant.plantName)
                     .font(.largeTitle)
-                
+
                 ScrollView {
                     plant.sunlightAttribute.padding()
                     plant.temperatureAttribute.padding()
@@ -45,7 +45,7 @@ struct HomeView: View {
                     plant.pHAttribute.padding()
                 }.padding(.horizontal)
                 Spacer()
-                
+
                 HStack {
                     Button(action: foo) {
                         Text("Settings")
@@ -65,6 +65,6 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView(plant: ModelData().users[0].plants[0])
+        HomeView(plant: UserData(user: load("userData.json")).plants[0])
     }
 }

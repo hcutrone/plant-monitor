@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3B7F3D5629B40003008A0B48 /* NewPlantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7F3D5529B40003008A0B48 /* NewPlantView.swift */; };
-		3B7F3D5C29B51D41008A0B48 /* Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B7F3D5B29B51D41008A0B48 /* Test.m */; };
 		3B8CC2B229B1702D0035FE07 /* Plant_MonitorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8CC2B129B1702D0035FE07 /* Plant_MonitorApp.swift */; };
 		3B8CC2B629B1702F0035FE07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B8CC2B529B1702F0035FE07 /* Assets.xcassets */; };
 		3B8CC2B929B1702F0035FE07 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B8CC2B829B1702F0035FE07 /* Preview Assets.xcassets */; };
@@ -25,7 +24,6 @@
 
 /* Begin PBXFileReference section */
 		3B7F3D5529B40003008A0B48 /* NewPlantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPlantView.swift; sourceTree = "<group>"; };
-		3B7F3D5B29B51D41008A0B48 /* Test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Test.m; sourceTree = "<group>"; };
 		3B8CC2AE29B1702D0035FE07 /* Plant Monitor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Plant Monitor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B8CC2B129B1702D0035FE07 /* Plant_MonitorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plant_MonitorApp.swift; sourceTree = "<group>"; };
 		3B8CC2B529B1702F0035FE07 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -55,7 +53,6 @@
 		3B8CC2A529B1702D0035FE07 = {
 			isa = PBXGroup;
 			children = (
-				3B7F3D5B29B51D41008A0B48 /* Test.m */,
 				3B8CC2D129B28A140035FE07 /* ModelData.swift */,
 				3B8CC2CF29B285EE0035FE07 /* User.swift */,
 				3B8CC2D329B28B790035FE07 /* userData.json */,
@@ -175,7 +172,6 @@
 				3B8CC2D029B285EF0035FE07 /* User.swift in Sources */,
 				3B8CC2C029B174F50035FE07 /* HomeView.swift in Sources */,
 				3B8CC2C829B184190035FE07 /* Attribute.swift in Sources */,
-				3B7F3D5C29B51D41008A0B48 /* Test.m in Sources */,
 				3B8CC2D229B28A140035FE07 /* ModelData.swift in Sources */,
 				3B7F3D5629B40003008A0B48 /* NewPlantView.swift in Sources */,
 				3B8CC2B229B1702D0035FE07 /* Plant_MonitorApp.swift in Sources */,

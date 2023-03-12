@@ -8,22 +8,22 @@
 import SwiftUI
 
 struct Notifications: View {
-    @EnvironmentObject var modelData: ModelData
+    @EnvironmentObject var user: UserData
     var plant: PlantObject
 
     var plantIndex: Int {
-        modelData.users[0].plants.firstIndex(where: { $0.id == plant.id})!
+        user.plants.firstIndex(where: { $0.id == plant.id})!
     }
 
     func disableAllNotifications() {
-        for index in modelData.users[0].plants[plantIndex].notifications.indices {
-            modelData.users[0].plants[plantIndex].notifications[index].value = false
+        for index in user.plants[plantIndex].notifications.indices {
+            user.plants[plantIndex].notifications[index].value = false
         }
     }
 
     func enableAllNotifications() {
-        for index in modelData.users[0].plants[plantIndex].notifications.indices {
-            modelData.users[0].plants[plantIndex].notifications[index].value = true
+        for index in user.plants[plantIndex].notifications.indices {
+            user.plants[plantIndex].notifications[index].value = true
         }
     }
 
@@ -33,13 +33,13 @@ struct Notifications: View {
                 .font(.largeTitle)
                 .multilineTextAlignment(.center)
             VStack {
-                ForEach(modelData.users[0].plants[plantIndex].notifications.indices, id: \.self) { index in
+                ForEach(user.plants[plantIndex].notifications.indices, id: \.self) { index in
                     let valueBinding: Binding<Bool> = Binding(get: {
-                        modelData.users[0].plants[plantIndex].notifications[index].value
+                        user.plants[plantIndex].notifications[index].value
                     }, set: { newValue in
-                        modelData.users[0].plants[plantIndex].notifications[index].value = newValue
+                        user.plants[plantIndex].notifications[index].value = newValue
                     })
-                    NotifToggle(label: modelData.users[0].plants[plantIndex].notifications[index].label, isOn: valueBinding)
+                    NotifToggle(label: user.plants[plantIndex].notifications[index].label, isOn: valueBinding)
                 }
 
                 Button(action: enableAllNotifications) {
@@ -68,6 +68,7 @@ struct Notifications: View {
 
 struct Notifications_Previews: PreviewProvider {
     static var previews: some View {
-        Notifications(plant: ModelData().users[0].plants[0]).environmentObject(ModelData())
+        var user = UserData(user: load("userData.json"))
+        Notifications(plant: user.plants[0]).environmentObject(user)
     }
 }

@@ -9,8 +9,8 @@ import SwiftUI
 
 @main
 struct Plant_MonitorApp: App {
-    @StateObject private var modelData = ModelData()
-    
+    @StateObject private var modelData = UserData(user: load("userData.json"))
+
     var body: some Scene {
         WindowGroup {
             MyPlantsView()
