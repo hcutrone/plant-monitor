@@ -11,13 +11,24 @@ struct Notifications: View {
     @EnvironmentObject var modelData: ModelData
     var plant: PlantObject
     @State private var all: Bool = false
-    
+
+    var plantIndex: Int {
+        modelData.users[0].plants.firstIndex(where: { $0.id == plant.id})!
+    }
+
     func disableAllNotifications() {
-//        modelData.users[0].plants[0].notifications.moisture = false
-//        modelData.users[0].plants[0].notifications.temperature = false
-//        modelData.users[0].plants[0].notifications.sunlight = false
-//        modelData.users[0].plants[0].notifications.pH = false
-//        all = false
+        modelData.users[0].plants[plantIndex].notifications.moisture = false
+        modelData.users[0].plants[plantIndex].notifications.temperature = false
+        modelData.users[0].plants[plantIndex].notifications.sunlight = false
+        modelData.users[0].plants[plantIndex].notifications.pH = false
+        all = false
+    }
+    
+    func updateAll() {
+        all = modelData.users[0].plants[plantIndex].notifications.moisture &&
+                modelData.users[0].plants[plantIndex].notifications.temperature &&
+                modelData.users[0].plants[plantIndex].notifications.sunlight &&
+                modelData.users[0].plants[plantIndex].notifications.pH
     }
     
     var body: some View {
@@ -26,17 +37,29 @@ struct Notifications: View {
                 .font(.largeTitle)
                 .multilineTextAlignment(.center)
             VStack {
-//                NotifToggle(label: "Soil Moisture", isOn: $modelData.users[0].plants[0].notifications.moisture)
-//                NotifToggle(label: "Temperature", isOn: $modelData.users[0].plants[0].notifications.temperature)
-//                NotifToggle(label: "Sunlight", isOn: $modelData.users[0].plants[0].notifications.sunlight)
-//                NotifToggle(label: "pH", isOn: $modelData.users[0].plants[0].notifications.pH)
+                NotifToggle(label: "Soil Moisture", isOn: $modelData.users[0].plants[plantIndex].notifications.moisture)
+                    .onChange(of: modelData.users[0].plants[plantIndex].notifications.moisture) { value in
+                        updateAll()
+                    }
+                NotifToggle(label: "Temperature", isOn: $modelData.users[0].plants[plantIndex].notifications.temperature)
+                    .onChange(of: modelData.users[0].plants[plantIndex].notifications.temperature) { value in
+                        updateAll()
+                    }
+                NotifToggle(label: "Sunlight", isOn: $modelData.users[0].plants[plantIndex].notifications.sunlight)
+                    .onChange(of: modelData.users[0].plants[plantIndex].notifications.sunlight) { value in
+                        updateAll()
+                    }
+                NotifToggle(label: "pH", isOn: $modelData.users[0].plants[plantIndex].notifications.pH)
+                    .onChange(of: modelData.users[0].plants[plantIndex].notifications.pH) { value in
+                        updateAll()
+                    }
                 NotifToggle(label: "All", isOn: $all)
                     .onChange(of: all) { value in
                         if (value) {
-//                            modelData.users[0].plants[0].notifications.moisture = true
-//                            modelData.users[0].plants[0].notifications.temperature = true
-//                            modelData.users[0].plants[0].notifications.sunlight = true
-//                            modelData.users[0].plants[0].notifications.pH = true
+                            modelData.users[0].plants[plantIndex].notifications.moisture = true
+                            modelData.users[0].plants[plantIndex].notifications.temperature = true
+                            modelData.users[0].plants[plantIndex].notifications.sunlight = true
+                            modelData.users[0].plants[plantIndex].notifications.pH = true
                         }
                     }
             }
@@ -47,6 +70,9 @@ struct Notifications: View {
             }
         }
         .padding(.horizontal)
+        .onAppear {
+            updateAll()
+        }
     }
     
     struct NotifToggle: View {
@@ -63,6 +89,6 @@ struct Notifications: View {
 
 struct Notifications_Previews: PreviewProvider {
     static var previews: some View {
-        Notifications(plant: ModelData().users[0].plants[0])
+        Notifications(plant: ModelData().users[0].plants[0]).environmentObject(ModelData())
     }
 }

@@ -13,7 +13,8 @@ struct User: Hashable, Codable {
     var plants: [PlantObject]
 }
 
-struct PlantObject: Hashable, Codable {
+struct PlantObject: Hashable, Codable, Identifiable {
+    let id: UUID = UUID()
     var plantName: String
     var notifications: NotificationsObject
 
@@ -44,10 +45,6 @@ struct PlantObject: Hashable, Codable {
     var pHAttribute: Attribute {
         Attribute(label: pHData.label, percentage: pHData.percentage, goal: pHData.goal)
     }
-}
-
-extension PlantObject: Identifiable {
-    var id: UUID { return UUID() }
 }
 
 struct NotificationsObject: Hashable, Codable {
