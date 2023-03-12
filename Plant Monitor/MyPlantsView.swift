@@ -41,7 +41,7 @@ struct MyPlantsView: View {
                 }
             }
             .padding()
-        }
+        }.navigationViewStyle(.stack)
     }
 }
 

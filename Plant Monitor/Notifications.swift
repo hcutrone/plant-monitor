@@ -10,35 +10,41 @@ import SwiftUI
 struct Notifications: View {
     @EnvironmentObject var modelData: ModelData
     var plant: PlantObject
-    @State private var all: Bool = false
-    
-    func disableAllNotifications() {
-//        modelData.users[0].plants[0].notifications.moisture = false
-//        modelData.users[0].plants[0].notifications.temperature = false
-//        modelData.users[0].plants[0].notifications.sunlight = false
-//        modelData.users[0].plants[0].notifications.pH = false
-//        all = false
+
+    var plantIndex: Int {
+        modelData.users[0].plants.firstIndex(where: { $0.id == plant.id})!
     }
-    
+
+    func disableAllNotifications() {
+        for index in modelData.users[0].plants[plantIndex].notifications.indices {
+            modelData.users[0].plants[plantIndex].notifications[index].value = false
+        }
+    }
+
+    func enableAllNotifications() {
+        for index in modelData.users[0].plants[plantIndex].notifications.indices {
+            modelData.users[0].plants[plantIndex].notifications[index].value = true
+        }
+    }
+
     var body: some View {
         VStack {
             Text(plant.plantName + "'s Notifications")
                 .font(.largeTitle)
                 .multilineTextAlignment(.center)
             VStack {
-//                NotifToggle(label: "Soil Moisture", isOn: $modelData.users[0].plants[0].notifications.moisture)
-//                NotifToggle(label: "Temperature", isOn: $modelData.users[0].plants[0].notifications.temperature)
-//                NotifToggle(label: "Sunlight", isOn: $modelData.users[0].plants[0].notifications.sunlight)
-//                NotifToggle(label: "pH", isOn: $modelData.users[0].plants[0].notifications.pH)
-                NotifToggle(label: "All", isOn: $all)
-                    .onChange(of: all) { value in
-                        if (value) {
-//                            modelData.users[0].plants[0].notifications.moisture = true
-//                            modelData.users[0].plants[0].notifications.temperature = true
-//                            modelData.users[0].plants[0].notifications.sunlight = true
-//                            modelData.users[0].plants[0].notifications.pH = true
-                        }
-                    }
+                ForEach(modelData.users[0].plants[plantIndex].notifications.indices, id: \.self) { index in
+                    let valueBinding: Binding<Bool> = Binding(get: {
+                        modelData.users[0].plants[plantIndex].notifications[index].value
+                    }, set: { newValue in
+                        modelData.users[0].plants[plantIndex].notifications[index].value = newValue
+                    })
+                    NotifToggle(label: modelData.users[0].plants[plantIndex].notifications[index].label, isOn: valueBinding)
+                }
+
+                Button(action: enableAllNotifications) {
+                    Text("Turn on all notifications")
+                }
             }
             .padding()
             Spacer()
@@ -48,7 +54,7 @@ struct Notifications: View {
         }
         .padding(.horizontal)
     }
-    
+
     struct NotifToggle: View {
         var label: String
         var isOn: Binding<Bool>
@@ -60,9 +66,8 @@ struct Notifications: View {
     }
 }
 
-
 struct Notifications_Previews: PreviewProvider {
     static var previews: some View {
-        Notifications(plant: ModelData().users[0].plants[0])
+        Notifications(plant: ModelData().users[0].plants[0]).environmentObject(ModelData())
     }
 }

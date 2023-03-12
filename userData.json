@@ -25,12 +25,24 @@
           "goal": "7",
           "percentage": "50"
         },
-        "notifications": {
-            "sunlight": true,
-            "moisture": true,
-            "temperature": true,
-            "pH": true
-        }
+        "notifications": [
+            {
+                "label": "Sunlight",
+                "value": true
+            },
+            {
+                "label": "Moisture",
+                "value": true
+            },
+            {
+                "label": "Temperature",
+                "value": true
+            },
+            {
+                "label": "pH",
+                "value": true
+            }
+        ]
       },
       {
         "plantName": "String of Pearls",
@@ -55,12 +67,24 @@
           "goal": "7",
           "percentage": "90"
         },
-        "notifications": {
-            "sunlight": true,
-            "moisture": true,
-            "temperature": true,
-            "pH": false
-        }
+        "notifications": [
+            {
+                "label": "Sunlight",
+                "value": true
+            },
+            {
+                "label": "Moisture",
+                "value": true
+            },
+            {
+                "label": "Temperature",
+                "value": true
+            },
+            {
+                "label": "pH",
+                "value": false
+            }
+        ]
       }
     ]
   }
