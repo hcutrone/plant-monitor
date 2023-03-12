@@ -34,7 +34,7 @@ struct Notifications: View {
                 .multilineTextAlignment(.center)
             VStack {
                 ForEach(modelData.users[0].plants[plantIndex].notifications.indices, id: \.self) { index in
-                    var valueBinding: Binding<Bool> = Binding(get: {
+                    let valueBinding: Binding<Bool> = Binding(get: {
                         modelData.users[0].plants[plantIndex].notifications[index].value
                     }, set: { newValue in
                         modelData.users[0].plants[plantIndex].notifications[index].value = newValue
