@@ -10,7 +10,6 @@ import SwiftUI
 struct Notifications: View {
     @EnvironmentObject var modelData: ModelData
     var plant: PlantObject
-    @State private var all: Bool = false
 
     var plantIndex: Int {
         modelData.users[0].plants.firstIndex(where: { $0.id == plant.id})!
@@ -20,19 +19,14 @@ struct Notifications: View {
         for index in modelData.users[0].plants[plantIndex].notifications.indices {
             modelData.users[0].plants[plantIndex].notifications[index].value = false
         }
-        all = false
     }
 
-    func updateAll() {
+    func enableAllNotifications() {
         for index in modelData.users[0].plants[plantIndex].notifications.indices {
-            if (!modelData.users[0].plants[plantIndex].notifications[index].value) {
-                all = false
-                return
-            }
+            modelData.users[0].plants[plantIndex].notifications[index].value = true
         }
-        all = true
     }
-    
+
     var body: some View {
         VStack {
             Text(plant.plantName + "'s Notifications")
@@ -48,14 +42,9 @@ struct Notifications: View {
                     NotifToggle(label: modelData.users[0].plants[plantIndex].notifications[index].label, isOn: valueBinding)
                 }
 
-                NotifToggle(label: "All", isOn: $all)
-                    .onChange(of: all) { value in
-                        if (value) {
-                            for index in modelData.users[0].plants[plantIndex].notifications.indices {
-                                modelData.users[0].plants[plantIndex].notifications[index].value = true
-                            }
-                        }
-                    }
+                Button(action: enableAllNotifications) {
+                    Text("Turn on all notifications")
+                }
             }
             .padding()
             Spacer()
@@ -64,11 +53,8 @@ struct Notifications: View {
             }
         }
         .padding(.horizontal)
-        .onAppear {
-            updateAll()
-        }
     }
-    
+
     struct NotifToggle: View {
         var label: String
         var isOn: Binding<Bool>
@@ -79,7 +65,6 @@ struct Notifications: View {
         }
     }
 }
-
 
 struct Notifications_Previews: PreviewProvider {
     static var previews: some View {
