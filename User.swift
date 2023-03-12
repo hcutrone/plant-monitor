@@ -16,7 +16,7 @@ struct User: Hashable, Codable {
 struct PlantObject: Hashable, Codable, Identifiable {
     let id: UUID = UUID()
     var plantName: String
-    var notifications: NotificationsObject
+    var notifications: [NotificationsObject]
 
     private var imageName: String
     var image: Image {
@@ -47,9 +47,8 @@ struct PlantObject: Hashable, Codable, Identifiable {
     }
 }
 
-struct NotificationsObject: Hashable, Codable {
-    var sunlight: Bool
-    var temperature: Bool
-    var moisture: Bool
-    var pH: Bool
+struct NotificationsObject: Hashable, Codable, Identifiable {
+    var label: String
+    var value: Bool
+    var id: String { label }
 }
